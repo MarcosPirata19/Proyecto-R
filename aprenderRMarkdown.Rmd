@@ -1,0 +1,52 @@
+---
+title: "Pruebas R Markdown"
+author: "Marcos Iturrioz"
+date: "2025-03-25"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+    
+---
+# Base de Datos
+```{r}
+mtcars
+```
+## Estadistica descriptiva    
+
+```{r}
+summary(mtcars)
+```
+
+### Graficos de Relaciones entre variables
+
+```{r}
+plot(mtcars$mpg, mtcars$hp)
+```
+### Base personal
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+```{r message=FALSE, warning=FALSE, rows.print= 20}
+base_datos  <- read_csv("base_datos_supuestos.csv")
+base_datos
+```
+## Estadistica descriptiva
+
+```{r}
+summary(base_datos)
+```
+### Grafico de relaciones entre variables
+```{r}
+plot(base_datos$salud_fisica, base_datos$tristeza)
+```
+
+
+---
